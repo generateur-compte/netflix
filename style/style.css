@@ -70,6 +70,8 @@ body{
 .login h1{
     color: white;
     padding-bottom: 10px;
+    font-size: 40px;
+    text-align: center;
 }
 
 .input-text{
